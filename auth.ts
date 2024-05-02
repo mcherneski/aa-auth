@@ -5,8 +5,8 @@ import { getCsrfToken } from 'next-auth/react'
 import { SiweMessage } from 'siwe'
 import Credentials from 'next-auth/providers/credentials'
 
-
 const prisma = new PrismaClient()
+
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
     adapter: PrismaAdapter(prisma),
@@ -68,9 +68,3 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         }
     }
 })
-
-
-// I don't think I need this.
-// const handler = NextAuth(authOptions)
-
-// export {handler as GET, handler as POST}
